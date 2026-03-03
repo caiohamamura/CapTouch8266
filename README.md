@@ -38,12 +38,12 @@ Basic circuit:
   |
   Touch Pad
   |
-  (Finger capacitance to GND)
+  (Finger capacitance)
 ```
 
 ### Recommended values
 
-- 500kΩ works
+- 510kΩ works
 - 1MΩ is more stable
 - Optional: 22pF–47pF from pad to GND for increased stability
 
@@ -235,7 +235,7 @@ Baseline: 0 | Threshold: 8 | Votes: 10/20 | Buffer: 2 12 2 15 17 13 5 35 13 15 2
 
 ---
 
-## 📊 Typical Values (500kΩ Example)
+## 📊 Typical Values (510kΩ Example)
 
 Without touch:
 ```
