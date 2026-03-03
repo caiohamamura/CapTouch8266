@@ -10,8 +10,6 @@ This library allows you to create capacitive touch pads using only:
 - A copper pad (or wire / foil)
 - No special ICs required
 
-Perfect for low-cost IoT projects, classroom experiments, and interactive games.
-
 ---
 
 ## ✨ Features
