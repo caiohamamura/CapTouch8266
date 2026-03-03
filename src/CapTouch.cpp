@@ -81,3 +81,41 @@ unsigned long CapTouch8266::getRaw() {
 unsigned long CapTouch8266::getBaseline() {
     return _baseline;
 }
+
+uint8_t CapTouch8266::getVoteCount() {
+    uint8_t count = 0;
+    unsigned long threshold = _baseline + _thresholdOffset;
+
+    for (uint8_t i = 0; i < _bufferSize; i++) {
+        if (_buffer[i] > threshold)
+            count++;
+    }
+
+    return count;
+}
+
+unsigned long CapTouch8266::getBufferValue(uint8_t index) {
+    if (index >= _bufferSize)
+        return 0;
+
+    return _buffer[index];
+}
+
+void CapTouch8266::printDebug(Stream &s) {
+    s.print("Baseline: ");
+    s.print(_baseline);
+    s.print(" | Threshold: ");
+    s.print(_baseline + _thresholdOffset);
+    s.print(" | Votes: ");
+    s.print(getVoteCount());
+    s.print("/");
+    s.print(_bufferSize);
+    s.print(" | Buffer: ");
+
+    for (uint8_t i = 0; i < _bufferSize; i++) {
+        s.print(_buffer[i]);
+        s.print(" ");
+    }
+
+    s.println();
+}

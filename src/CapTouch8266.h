@@ -1,7 +1,8 @@
 #pragma once
 #include <Arduino.h>
 
-class CapTouch8266 {
+class CapTouch8266
+{
 public:
     CapTouch8266(uint8_t pin, uint8_t bufferSize = 20);
 
@@ -16,6 +17,9 @@ public:
     void setThresholdOffset(unsigned long offset);
     void setVotePercentage(float pct);
     void setTimeout(unsigned long timeout);
+    uint8_t getVoteCount();
+    unsigned long getBufferValue(uint8_t index);
+    void printDebug(Stream &s);
 
 private:
     unsigned long measure();

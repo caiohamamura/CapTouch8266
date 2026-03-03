@@ -20,6 +20,7 @@ This library allows you to create capacitive touch pads using only:
 - ✅ Rolling buffer + statistical voting
 - ✅ Adjustable threshold offset
 - ✅ Adjustable timeout
+- ✅ Debug inspection (raw values + votes)
 - ✅ No external dependencies
 
 ---
@@ -175,17 +176,53 @@ Default: `2000` (microseconds)
 
 ---
 
+
+
+## 📊 Debug & Inspection API
+
+These functions allow you to inspect internal values for tuning and teaching.
+
+---
+
 ### `getRaw()`
 
-Returns latest raw measurement.
+Returns the most recent raw measurement.
 
 ---
 
 ### `getBaseline()`
 
-Returns calibrated baseline value.
+Returns the calibrated baseline value.
 
 ---
+
+### `getVoteCount()`
+
+Returns how many buffer samples are above threshold.
+
+---
+
+### `getBufferValue(uint8_t index)`
+
+Returns a specific buffer value.
+
+---
+
+### `printDebug(Stream &s)`
+
+Prints full diagnostic information to any Arduino `Stream`.
+
+Example:
+
+```cpp
+touch.printDebug(Serial);
+```
+
+Example output:
+
+```
+Baseline: 0 | Threshold: 8 | Votes: 10/20 | Buffer: 2 12 2 15 17 13 5 35 13 15 22 0 0 0 0 0 0 0 15 28
+```
 
 ## 🧠 How It Works
 
