@@ -1,0 +1,12 @@
+{
+  "name": "CapTouch8266",
+  "version": "1.0.0",
+  "description": "Lightweight capacitive touch sensing for ESP8266 using RC timing and pulseIn",
+  "keywords": ["capacitive", "touch", "esp8266", "rc", "sensor"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caiohamamura/CapTouch8266.git"
+  },
+  "frameworks": ["arduino"],
+  "platforms": ["espressif8266"]
+}
